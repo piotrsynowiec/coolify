@@ -29,7 +29,7 @@
 <!-- data-ec-open: its page opens on double-click (see the root's pointerdown capture listener). -->
 <div
   bind:this={card}
-  class="group absolute flex w-[260px] flex-col rounded-xl border bg-white p-3 shadow-sm transition-shadow hover:shadow-md dark:bg-raised {selected
+  class="group absolute flex w-[260px] flex-col rounded-xl border bg-white p-3 shadow-sm dark:bg-raised {selected
     ? 'border-coollabs ring-2 ring-coollabs/25 dark:border-warning dark:ring-warning/25'
     : node.missing
       ? 'border-dashed border-red-300 dark:border-red-500/40'
@@ -62,7 +62,7 @@
       <NodeIcon {node} />
     </div>
     <div class="min-w-0 flex-1">
-      <div class="truncate text-[13px] leading-4 font-semibold text-black dark:text-fg {node.type === 'variable' ? 'font-mono' : ''} {node.link ? 'underline-offset-2 group-hover:underline' : ''}">{node.name}</div>
+      <div class="truncate text-[13px] leading-4 font-semibold text-black dark:text-fg {node.type === 'variable' ? 'font-mono' : ''} {node.link ? 'group-hover:text-neutral-600 dark:group-hover:text-white' : ''}">{node.name}</div>
       <div class="mt-0.5 truncate text-[11px] leading-4 text-neutral-500 dark:text-fg-faint">{node.subtitle || TYPE_LABELS[node.type] || ''}</div>
     </div>
     {#if isSource(node)}
@@ -133,7 +133,7 @@
   {#if port}
     <span
       bind:this={portDot}
-      class="absolute top-1/2 -right-1.5 size-3 -translate-y-1/2 cursor-crosshair rounded-full border-2 border-white bg-neutral-400 opacity-0 shadow transition-[opacity,scale,background-color] group-hover:opacity-100 hover:scale-120 hover:bg-coollabs dark:border-raised dark:bg-neutral-500 dark:hover:bg-warning"
+      class="invisible absolute top-1/2 -right-1.5 size-3 -translate-y-1/2 cursor-crosshair rounded-full border-2 border-white bg-neutral-400 shadow group-hover:visible hover:bg-coollabs dark:border-raised dark:bg-neutral-500 dark:hover:bg-warning"
       data-ec-port
       role="presentation"
       title={port}
